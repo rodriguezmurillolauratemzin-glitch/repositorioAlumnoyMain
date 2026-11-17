@@ -93,6 +93,8 @@ public class Alumno {
                ", Edad: " + edad +
                ", Nota: " + nota;
     }
-
+public void mostrarInformacion() {
+    System.out.println(this);
+}
     //public abstract String obtenerModalidad();
 }
