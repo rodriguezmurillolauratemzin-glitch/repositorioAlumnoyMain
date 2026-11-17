@@ -102,9 +102,24 @@ public void mostrarInformacion() {
     System.out.println("NOTA MEDIA: " + calcularMedia());
     System.out.println("ALUMNOS APROBADOS: " + contarAprobados());
 }
+public void mostrarModalidades() {
+    System.out.println("MODALIDADES DE LOS ALUMNOS");
+    System.out.println("--------------------------");
+
+    for (Alumno alumno : alumnos) {
+        System.out.println(
+            alumno.getNombre() + ": " + alumno.obtenerModalidad()
+        );
+    }
+}
     @Override
     public String generarInforme() {
-        return "Curso: " + nombre + ", Profesor: " + nombreProfesor + ", Número de alumnos: " + alumnos.size();
+        return "INFORME DEL CURSO\n" +
+            "Nombre del curso: " + nombre + "\n" +
+            "Profesor: " + nombreProfesor + "\n" +
+            "Número de alumnos: " + alumnos.size() + "\n" +
+            "Nota media: " + calcularMedia() + "\n" +
+            "Alumnos aprobados: " + contarAprobados();
     }
     @Override
     public String exportarCSV() {

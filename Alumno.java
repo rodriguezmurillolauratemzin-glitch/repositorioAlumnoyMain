@@ -1,5 +1,5 @@
 
-public class Alumno {
+public abstract class Alumno {
 
     private String nombre;
     private int edad;
@@ -96,5 +96,5 @@ public class Alumno {
 public void mostrarInformacion() {
     System.out.println(this);
 }
-    //public abstract String obtenerModalidad();
+    public abstract String obtenerModalidad();
 }
