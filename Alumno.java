@@ -1,12 +1,14 @@
-public class Alumno{
+
+public class Alumno {
+
     private String nombre;
     private int edad;
     private double nota;
 
     public Alumno(String nombre, int edad, double nota) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.nota = nota;
+        setNombre(nombre);
+        setEdad(edad);
+        setNota(nota);
     }
 
     public String getNombre() {
@@ -20,9 +22,30 @@ public class Alumno{
     public double getNota() {
         return nota;
     }
+
+    public void setNombre(String nombre) {
+        if (nombre == null || nombre.isBlank()) {
+            throw new IllegalArgumentException(
+                "El nombre no puede ser nulo ni estar en blanco."
+            );
+        }
+        this.nombre = nombre;
+    }
+
+    public void setEdad(int edad) {
+        if (edad < 16 || edad > 100) {
+            throw new IllegalArgumentException(
+                "La edad debe estar entre 16 y 100."
+            );
+        }
+        this.edad = edad;
+    }
+
     public void setNota(double nota) {
         if (nota < 0.0 || nota > 10.0) {
-            throw new IllegalArgumentException("La nota debe estar entre 0 y 10.");
+            throw new IllegalArgumentException(
+                "La nota debe estar entre 0 y 10."
+            );
         }
         this.nota = nota;
     }
@@ -42,6 +65,7 @@ public class Alumno{
     public boolean tieneMejorNotaQue(Alumno otro) {
         return this.nota > otro.nota;
     }
+
     public String obtenerCalificacion() {
 
         if (nota < 5) {
@@ -54,6 +78,7 @@ public class Alumno{
             return "Sobresaliente";
         }
     }
+
     public boolean tieneLaMismaNotaQue(Alumno otro) {
         return this.nota == otro.nota;
     }
@@ -64,7 +89,9 @@ public class Alumno{
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre + ", Edad: " + edad + ", Nota: " + nota;
+        return "Nombre: " + nombre +
+               ", Edad: " + edad +
+               ", Nota: " + nota;
     }
 
     //public abstract String obtenerModalidad();
