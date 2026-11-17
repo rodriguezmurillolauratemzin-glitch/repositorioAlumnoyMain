@@ -39,6 +39,29 @@ public class Alumno{
         setNota(nota + puntos);
     }
 
+    public boolean tieneMejorNotaQue(Alumno otro) {
+        return this.nota > otro.nota;
+    }
+    public String obtenerCalificacion() {
+
+        if (nota < 5) {
+            return "Suspenso";
+        } else if (nota < 7) {
+            return "Aprobado";
+        } else if (nota < 9) {
+            return "Notable";
+        } else {
+            return "Sobresaliente";
+        }
+    }
+    public boolean tieneLaMismaNotaQue(Alumno otro) {
+        return this.nota == otro.nota;
+    }
+
+    public double obtenerDiferenciaDeNota(Alumno otro) {
+        return Math.abs(this.nota - otro.nota);
+    }
+
     @Override
     public String toString() {
         return "Nombre: " + nombre + ", Edad: " + edad + ", Nota: " + nota;
