@@ -86,6 +86,9 @@ public class Alumno {
     public double obtenerDiferenciaDeNota(Alumno otro) {
         return Math.abs(this.nota - otro.nota);
     }
+    public void subirNota(double puntos) {
+    setNota(nota + puntos);
+}
 
     @Override
     public String toString() {

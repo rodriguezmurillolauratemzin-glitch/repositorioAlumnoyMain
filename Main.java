@@ -97,6 +97,12 @@ public class Main {
         System.out.println("Nota maxima: " + notaMaxima);
         System.out.println("Nota minima: " + notaMinima);
         System.out.println("Alumnos mayores de edad: " + mayoresEdad);
+
+//Comprobación Tarea 2 Parte 3
+        Alumno alumno1 = new Alumno("María", 20, 7.0);
+        System.out.println("Nota inicial: " + alumno1.getNota());
+        alumno1.subirNota(2.0);
+        System.out.println("Nota después de subir: " + alumno1.getNota());
     
     }
 }
